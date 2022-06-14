@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400&display=swap&family=Dancing+Script:wght@400;700&display=swap');
 
 :root {
     --primary-color: rgb(61, 21, 127);
@@ -28,10 +28,6 @@ main {
 a {
     text-decoration: none;
     color: var(--text-color);
-}
-a:hover {
-    color: var(--highlight-text);
-    transform: scale(2);
 }
 
 h1 {
@@ -64,11 +60,28 @@ footer {
     align-items: center;
 
     width: 100%;
-    padding: 2rem;
+    padding: 2px;
     font-size: 2rem;
     z-index: 100;
 
     background-color: var(--primary-color);
+}
+.icon {
+    width: 2em;
+    height: 2em;
+    stroke-width: 1;
+    stroke: yellow;
+}
+
+.header-menu h1 {
+    display: flex;
+    margin-inline: 2px;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 200px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 5rem;
 }
 
 .header-menu ul {
@@ -77,6 +90,9 @@ footer {
 }
 .header-menu li {
     margin-inline: 5px;
+}
+.header-menu li a:hover {
+    color: var(--highlight-text);
 }
 
 .perfil {
@@ -138,29 +154,79 @@ form input {
 
 #create-history input[type="email"] {
     font-size: 2rem;
-    padding: 20px 10px 10px 10px;
-    height: 40px;
+    padding: 20px 10px 10px 10px;;
     width: 100%;
     outline: none;
-    border: 3px transparent;
+    border: none;
 
     color: var(--text-color);
     background-color: rgba(0, 0, 0, 0.5);
 }
-
 
 #create-history input[type="button"] {
     width: 20%;
     font-size: 2rem;
     outline: none;
+    padding: 2px;
 
     color: var(--text-color);
     background-color: rgba(0, 0, 0, 0.5);
-    border: 3px transparent;
+    border: none;
 }
 
 #create-history input:focus {
     color: var(--highlight-text);
     transition: ease .5s;
-    border: 3px solid black;
+}
+
+/*  HISTORIES   */
+
+#seek-history {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.histories {
+    width: 80%;
+    height: 90%;
+    display: inline-flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.history {
+    font-size: 1.3rem;
+    height: 200px;
+    width: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    padding: 10px;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    background-color: var(--primary-color);
+}
+.history:hover {
+    transform: scale(1.1);
+    transition: .25s ease;
+}
+.history a {
+    height: 100%;
+}
+.history-title {
+    font-size: 2rem;
+    justify-content: center;
+}
+.history p:nth-child(2) {
+    text-align: justify;
+}
+.history p:nth-child(3) {
+    text-align: right;
 }
