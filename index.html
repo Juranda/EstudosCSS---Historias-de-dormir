@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,32 +7,33 @@
     <link rel="stylesheet" href="style.css">
     <title>Historias para dormir</title>
 </head>
-
 <body>
     <header class="header-menu">
-        <div class="header-div">
-            <h1>Historias para dormir</h1>
-            <nav class="header-nav">
-                <ul>
-                    <li><a href="#">Historias</a></li>
-                    <li><a href="#">Opções</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Historias para dormir</h1>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="#">Historias</a></li>
+                <li><a href="#">Opções</a></li>
+                <li><div class="perfil"></div></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section class="creation-history">
-            <div>
-                <h1>Crie suas próprias histórias!</h1>
-                <h4>Ou se inscreva e receba emails.</h4>
-                <form action="post">
-                    <input type="email" placeholder="exemplo@gmail.com">
-                    <input type="button" value="Enviar">
-                </form>
+        <section id="create-history">
+            <div class="container ">
+                <div class="create">
+                    <h1>Crie suas próprias histórias!</h1>
+                    <p>Criar histórias sempre foi algo bem humano, 
+                    descubra diversas histórias criadas pela comunidade de "historiadores".</p>
+                    <p>Dica de ouro: digite seu email para receber histórias personalizadas todos os dias :)</p>
+                    <form action="post">
+                        <input type="email" placeholder="exemplo@gmail.com">
+                        <input type="button" value="Se inscrever!">
+                    </form>
+                </div>
             </div>
-            <img src="/images/openbook.jpg" alt="Imagem de um livro">
         </section>
-        <section class="found-history">
+        <section id="seek-history">
             <div class="histories">
                 <div class="history">
                     <div><img src="/images/openbook.jpg" alt="Livro aberto"></div>
@@ -42,8 +42,6 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis dignissimos autem quos
                             praesentium at molestiae placeat nihil illo impedit? Tempora voluptatum sit tempore
                             blanditiis aut nobis quos molestias facilis quaerat?</p>
-                    </div>
-                    <div>
                         <audio controls autoplay> 
                             <source  src="/audios/boom.mp3" type="audio/mp3">
                             Seu navegador não suporta esse áudio.
@@ -53,6 +51,9 @@
             </div>
         </section>
     </main>
+    <footer>
+        <h1>FOOTER</h1>
+        <h4>Para uma boa noite de sono</h4>
+    </footer>
 </body>
-
 </html>

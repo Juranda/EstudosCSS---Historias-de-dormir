@@ -1,3 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+:root {
+    --primary-color: rgb(61, 21, 127);
+    --secundary-color:rgb(29, 10, 61);
+    --text-color: rgb(255,255,255);
+    --highlight-text: rgb(255, 255, 0);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+    font-family: 'Poppins','Times New Roman', sans-serif;
+}
+
+body {
+    background-color: var(--secundary-color);
+    color: var(--text-color);
+}
+
+main {
+    top: 86px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+a:hover {
+    color: var(--highlight-text);
+    transform: scale(2);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 400;
+}   
+
 img {
     height: 200px;
+}
+
+footer {
+    border: 3px solid black;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/*  HEADER  */
+
+.header-menu {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 2rem;
+    font-size: 2rem;
+    z-index: 100;
+
+    background-color: var(--primary-color);
+}
+
+.header-menu ul {
+    list-style: none;
+    display: flex;
+}
+.header-menu li {
+    margin-inline: 5px;
+}
+
+.perfil {
+    background-color: yellow;
+    border: 15px solid yellow;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/*  Sign-in form  */
+
+.create {
+    width: 60%;
+}
+
+#create-history {
+    background: url(/images/bg.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+
+#create-history::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+#create-history h1 {
+    font-size: 5rem;
+}
+#create-history p {
+    font-size: 2rem;
+    font-style: italic;
+    margin: 10px 0px 10px 0px;
+    letter-spacing: 0;
+}
+
+#create-history p:nth-child(3) {
+    color: var(--highlight-text);
+}
+
+#create-history form {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1px;
+}
+
+form input {
+    margin-inline: 5px;
+}
+
+#create-history input[type="email"] {
+    font-size: 2rem;
+    padding: 20px 10px 10px 10px;
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border: 3px transparent;
+
+    color: var(--text-color);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+#create-history input[type="button"] {
+    width: 20%;
+    font-size: 2rem;
+    outline: none;
+
+    color: var(--text-color);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 3px transparent;
+}
+
+#create-history input:focus {
+    color: var(--highlight-text);
+    transition: ease .5s;
+    border: 3px solid black;
 }
