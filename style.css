@@ -64,6 +64,8 @@ footer {
     font-size: 2rem;
     z-index: 100;
 
+    animation: header-appear ease 1s forwards;
+
     background-color: var(--primary-color);
 }
 .icon {
@@ -102,10 +104,20 @@ footer {
     cursor: pointer;
 }
 
+@keyframes header-appear {
+    0% {
+        top: -64px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
 /*  Sign-in form  */
 
 .create {
     width: 60%;
+    animation: appear-from-bottom 2s ease forwards;
 }
 
 #create-history {
@@ -129,6 +141,7 @@ footer {
 }
 
 #create-history h1 {
+    top: -20px;
     font-size: 5rem;
 }
 #create-history p {
@@ -179,25 +192,46 @@ form input {
     transition: ease .5s;
 }
 
+@keyframes appear-from-bottom {
+    0% {
+        opacity: 0;
+        top: -200px;
+    }
+    100% {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
 /*  HISTORIES   */
 
 #seek-history {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
+
+#seek-history .section-title {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
 .histories {
     width: 80%;
     height: 90%;
     display: inline-flex;
     gap: 10px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .history {
+    cursor: pointer;
+    position: relative;
     font-size: 1.3rem;
     height: 200px;
     width: 200px;
@@ -209,6 +243,7 @@ form input {
     padding: 10px;
 
     border-radius: 10px;
+    border: 2px solid var(--secundary-color);
     overflow: hidden;
 
     background-color: var(--primary-color);
@@ -217,16 +252,25 @@ form input {
     transform: scale(1.1);
     transition: .25s ease;
 }
-.history a {
-    height: 100%;
+.history:hover .history-content img {
+    opacity: 0;
+    transition: .25s ease;
 }
-.history-title {
+.history-content img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.history-content h3 {
     font-size: 2rem;
-    justify-content: center;
+    text-align: center;
+    color:var(--highlight-text);
 }
-.history p:nth-child(2) {
+.history-content p:nth-child(1) {
     text-align: justify;
 }
-.history p:nth-child(3) {
+.history-content p:nth-child(2) {
     text-align: right;
 }
