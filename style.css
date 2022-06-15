@@ -121,7 +121,7 @@ footer {
 }
 
 #create-history {
-    background: url(/images/bg.jpg);
+    background: url(./images/bg.jpg);
     background-size: cover;
     background-position: top center;
     position: relative;
