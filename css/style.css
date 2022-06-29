@@ -14,6 +14,7 @@
 html {
     font-size: 10px;
     font-family: 'Poppins','Times New Roman', sans-serif;
+    min-width: 500px;
 }
 
 body {
@@ -57,7 +58,7 @@ img {
     align-items: center;
 
     width: 100%;
-    padding: 2px;
+    padding-inline: 30px;
     font-size: 2rem;
     z-index: 100;
 
@@ -69,14 +70,14 @@ img {
     width: 2em;
     height: 2em;
     stroke-width: 1;
-    stroke: yellow;
+    stroke: var(--highlight-text);
 }
 
 .header-menu h1 {
     display: flex;
-    margin-inline: 2px;
     align-items: center;
     justify-content: space-evenly;
+    justify-self: center;
     width: 200px;
     font-family: 'Dancing Script', cursive;
     font-weight: 700;
@@ -87,16 +88,22 @@ img {
     list-style: none;
     display: flex;
 }
+
 .header-menu li {
-    margin-inline: 5px;
+    margin-inline: 10px;
 }
-.header-menu li a:hover {
+
+.header-menu li:hover {
+    color: var(--highlight-text);
+    transform: translateY(-5px);
+}
+.header-menu li:hover a {
     color: var(--highlight-text);
 }
 
 .perfil {
-    background-color: yellow;
-    border: 15px solid yellow;
+    background-color: var(--highlight-text);
+    border: 15px solid var(--highlight-text);
     border-radius: 25px;
     cursor: pointer;
 }
@@ -118,7 +125,7 @@ img {
 }
 
 #create-history {
-    background: url(./images/bg.jpg);
+    background: url(../images/bg.jpg);
     background-size: cover;
     background-position: top center;
     position: relative;
@@ -141,6 +148,12 @@ img {
     top: -20px;
     font-size: 5rem;
 }
+
+#create-history h1:hover {
+    color: var(--highlight-text);
+    transition: 0.5s ease;
+}
+
 #create-history p {
     font-size: 2rem;
     font-style: italic;
@@ -153,11 +166,12 @@ img {
 }
 
 #create-history form {
-    width: 100%;
     display: grid;
-    grid-template-columns: 7fr 3fr;
+    grid-template-columns: 1fr 200px;
 }
-
+form {
+    margin-top: 50px;
+}
 form input {
     margin-inline: 5px;
 }
@@ -168,25 +182,53 @@ form input {
     width: 100%;
     outline: none;
     border: none;
+    border-radius: 10px;
 
     color: var(--text-color);
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-#create-history input[type="button"] {
+#create-history input[type="submit"] {
     font-size: 2rem;
     outline: none;
     margin-inline: 20px;
     padding: 10px;
+    cursor: pointer;
+
 
     color: var(--text-color);
     background-color: rgba(0, 0, 0, 0.5);
-    border: none;
+    border-radius: 10px;
+    transition: 0.5s ease transform;
+}
+#create-history input[type="email"]:hover {
+    box-shadow: 0px 0px 15px 1px var(--highlight-text);
+    transform: translateY(-10px);
+    transition: 0.5s ease transform;
+}
+#create-history input[type="submit"]:hover {
+    box-shadow: 0px 0px 15px 1px var(--highlight-text);
+    transform: translateY(-10px);
+    transition: 0.5s ease transform;
 }
 
 #create-history input:focus {
     color: var(--highlight-text);
     transition: ease .5s;
+}
+
+@media screen and (max-width: 658px) {
+    #create-history form {
+        display: flex;
+        flex-direction: column;
+        margin-inline: 20px;
+    }
+    #create-history input[type="submit"] {
+        margin: 0;
+    }
+    #create-history input[type="email"] {
+        margin-bottom: 25px;
+    }
 }
 
 @keyframes appear-from-bottom {
@@ -242,6 +284,7 @@ form input {
 
     border-radius: 10px;
     border: 2px solid var(--secundary-color);
+    box-shadow: 0px 0px 10px 5px yellow;
     overflow: hidden;
 
     background-color: var(--primary-color);
@@ -249,6 +292,7 @@ form input {
 .history:hover {
     transform: scale(1.1);
     transition: .25s ease;
+    box-shadow: 0px 0px 15px var(--highlight-text);
 }
 .history:hover .history-content img {
     opacity: 0;
@@ -280,17 +324,19 @@ form input {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 15rem;
+    min-height: 150px;
+    background-color: black;
 }
 
 #footer .footer-content {
     width: 100%;
-    background-color: black;
+    height: 100%;
+
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    height: 100%;
     text-align: center;
 }
+
 #footer .footer-content > div {
     display: flex;
     padding: 20px;
